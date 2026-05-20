@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/style/main.css" />
+    <link rel="stylesheet" href="style/main.css" />
   </head>
   <body>
     <header class="top-banner">
@@ -34,22 +34,23 @@
       <main class="panel__main">
         <article aria-labelledby="latest-entry__title" class="card">
           <header class="card__header">
-            <h3 id="latest-entry__title" class="card__heading">Latest Entry</h3>
+            <h2 id="latest-entry__title" class="card__heading">Latest Entry</h3>
             <div class="card__publish-info">
               <p class="card__date-and-author-info">
                 Published on
                 <time datetime="2026-05-20">May 20, 2026</time> by Jane Doe
               </p>
-              <ul role="list" id="card-entry__tags" class="card__tags">
-                <li><a href="#">Tag</a></li>
-                <li><a href="#">Tag</a></li>
-                <li><a href="#">Tag</a></li>
+              <ul role="list" id="card-entry__tags" class="card__tag-collection">
+                <li><a href="#" class="card__tag">Tag</a></li>
+                <li><a href="#" class="card__tag">Tag</a></li>
+                <li><a href="#" class="card__tag">Tag</a></li>
               </ul>
             </div>
           </header>
           <img
-            src="https://picsum.photos/500/250?random=4"
-            alt="Example Image"
+            src="https://picsum.photos/1920/1080?random=4"
+            alt="Visual presentation on the latest entry"
+            class="card__preview-image"
           />
           <section
             aria-labelledby="latest-entry__topic-title"

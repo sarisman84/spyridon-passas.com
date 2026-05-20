@@ -56,8 +56,8 @@ video {
   --fs-xs: 0.75rem;
   --fs-s: 0.825rem;
   --fs-base: 1rem;
-  --fs-lg: 1.25rem;
-  --fs-xl: 1.5rem;
+  --fs-lg: 1.5rem;
+  --fs-xl: 3rem;
 
   /* Line Heights*/
   --lh-normal: 1.5;
@@ -71,6 +71,19 @@ video {
   --spacing-lg: 2rem;
   --spacing-xl: 2.5rem;
 
+  /* Border Radius*/
+  --border-radius-xs: 0.125rem;
+  --border-radius-sm: 0.25rem;
+  --border-radius-base: 0.5rem;
+  --border-radius-lg: 0.75rem;
+  --border-radius-xl: 2rem;
+
+  /* Card Settings*/
+  /* Max Size*/
+  --card-max-width: 50rem;
+
+  /* Colors from Realtime Colors*/
+  /* Text */
   --clr-text-50: light-dark(#eef7f7, #081111);
   --clr-text-100: light-dark(#dcefef, #102323);
   --clr-text-200: light-dark(#badede, #214545);
@@ -83,7 +96,7 @@ video {
   --clr-text-900: light-dark(#102323, #dcefef);
   --clr-text-950: light-dark(#081111, #eef7f7);
 
-  /* Wrapping assigned values in the light-dark function */
+  /* Background */
   --clr-background-50: light-dark(#edf7f5, #08120f);
   --clr-background-100: light-dark(#dbf0eb, #0f241f);
   --clr-background-200: light-dark(#b8e0d6, #1f473d);
@@ -96,7 +109,7 @@ video {
   --clr-background-900: light-dark(#0f241f, #dbf0eb);
   --clr-background-950: light-dark(#08120f, #edf7f5);
 
-  /* Wrapping assigned values in the light-dark function */
+  /* Primary */
   --clr-primary-50: light-dark(#eef7f6, #081111);
   --clr-primary-100: light-dark(#dcefee, #102322);
   --clr-primary-200: light-dark(#badedd, #214544);
@@ -109,7 +122,7 @@ video {
   --clr-primary-900: light-dark(#102322, #dcefee);
   --clr-primary-950: light-dark(#081111, #eef7f6);
 
-  /* Wrapping assigned values in the light-dark function */
+  /* Secondary */
   --clr-secondary-50: light-dark(#eeeef7, #080911);
   --clr-secondary-100: light-dark(#dcddef, #101123);
   --clr-secondary-200: light-dark(#babbde, #212245);
@@ -122,7 +135,7 @@ video {
   --clr-secondary-900: light-dark(#101123, #dcddef);
   --clr-secondary-950: light-dark(#080911, #eeeef7);
 
-  /* Wrapping assigned values in the light-dark function */
+  /* Accent */
   --clr-accent-50: light-dark(#f0eef7, #0a0811);
   --clr-accent-100: light-dark(#e1dcef, #151023);
   --clr-accent-200: light-dark(#c3bade, #2a2145);
@@ -155,11 +168,11 @@ h4 {
   /* less line-height on headings to keep them more compact */
   /* usually 1.1 or maybe 1 depending on font choice */
   line-height: var(--lh-tight);
-  font-weight: var(--fw-bold);
 }
 
 strong {
   font-weight: var(--fw-bold);
+  color: var(--clr-accent-700);
 }
 
 /* same with styles, since not all fonts have italic for example */
@@ -169,6 +182,19 @@ i {
 
 a {
   text-decoration: none;
+
+  background-color: var(--clr-primary-200);
+  color: var(--clr-text-800);
+}
+
+a:hover {
+  background-color: var(--clr-accent-200);
+  color: var(--clr-accent-700);
+}
+
+a:focus {
+  background-color: var(--clr-accent-700);
+  color: var(--clr-text-50);
 }
 
 /***************************************/
@@ -192,7 +218,7 @@ a {
 .top-banner__heading {
   font-size: var(--fs-xl);
   font-weight: var(--fw-bolder);
-  
+
   text-align: center;
 
   padding: var(--spacing-md);
@@ -203,12 +229,14 @@ a {
 .top-banner__subtitle {
   color: var(--clr-text-100);
   font-weight: var(--fw-bold);
+
+  text-align: center;
 }
 
 .top-banner__strip {
   display: block;
 
-  margin-top: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
   padding: var(--spacing-xs) 0;
 
   background-color: var(--clr-background-700);
@@ -223,6 +251,121 @@ a {
 }
 
 .top-banner__link {
-  color: var(--clr-text-200);
+  background-color: transparent;
+  color: var(--clr-text-50);
+
   font-weight: var(--fw-bold);
+}
+
+.top-banner__link:hover {
+  background-color: transparent;
+  color: var(--clr-text-50);
+
+  text-decoration: underline;
+}
+
+.top-banner__link:focus {
+  background-color: transparent;
+  color: var(--clr-text-200);
+  text-decoration: underline;
+}
+
+.panel {
+  display: flex;
+  justify-self: center;
+
+  margin: var(--spacing-sm);
+}
+
+.card {
+  background-color: var(--clr-background-50);
+  border-radius: var(--border-radius-lg);
+
+  padding: var(--spacing-sm);
+
+  max-width: var(--card-max-width);
+}
+
+.card__heading {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bolder);
+}
+
+.card__publish-info {
+  display: flex;
+  justify-content: space-between;
+
+  padding-top: var(--spacing-sm)
+}
+
+.card__date-and-author-info {
+  color: var(--clr-accent-700);
+  font-weight: var(--fw-bold);
+}
+
+.card__tag-collection {
+  display: flex;
+  gap: var(--spacing-xs);
+
+  list-style: none;
+}
+
+.card__tag {
+  background-color: var(--clr-primary-200);
+  color: var(--clr-text-800);
+
+  border-radius: calc(var(--border-radius-lg) / 2);
+
+  margin: var(--spacing-xs) 0;
+  padding: calc(var(--spacing-xs) / 2) var(--spacing-md);
+}
+
+.card__tag:hover {
+  background-color: var(--clr-accent-200);
+  color: var(--clr-accent-700);
+}
+
+.card__tag:focus {
+  background-color: var(--clr-accent-700);
+  color: var(--clr-text-50);
+}
+
+.card__preview-image {
+  padding: var(--spacing-sm) 0;
+}
+
+.card__content {
+  padding-top: var(--spacing-sm);
+}
+
+.card__title {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  padding-bottom: var(--spacing-sm);
+}
+
+.card__footer {
+  padding-top: var(--spacing-lg);
+}
+
+.card__button {
+  font-weight: var(--fw-bold);
+
+  background-color: var(--clr-primary-200);
+  color: var(--clr-text-600);
+
+  border-radius: var(--border-radius-sm);
+
+  margin: var(--spacing-xs) 0;
+  padding: var(--spacing-xs);
+}
+
+.card__button:hover {
+  background-color: var(--clr-accent-200);
+  color: var(--clr-accent-700);
+}
+
+.card__button:focus {
+  background-color: var(--clr-accent-700);
+  color: var(--clr-text-50);
 }
