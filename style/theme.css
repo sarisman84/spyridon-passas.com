@@ -1,0 +1,21 @@
+:root {
+  /*Font Sizes*/
+  --ff-title-size: 2rem;
+  --ff-page-header__logo-size: 3rem;
+  --ff-page-header__subtitle-size: 1rem;
+  --ff-page-header__nav-size: 1rem;
+
+  /*Font Colors*/
+  --ff-title-clr: black;
+  --ff-page-header__logo-clr: white;
+
+  /*Font Weights*/
+  --ff-title-wgt: 600;
+  --ff-page-header__logo-wgt: var(--ff-title-wgt);
+  --ff-page-header__subtitle-wgt: var(--ff-title-wgt);
+
+  /*Background Colors*/
+  --page-header-bg-clr: red;
+  --page-header__nav-bg-clr: brown;
+  --page-bg-clr: green;
+}
