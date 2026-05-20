@@ -1,4 +1,228 @@
+/***************************************/
+/*             Reset                   */
+/***************************************/
+/* makes sizing simpler */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* remove default spacing */
+/* force styling of type through styling, rather than elements */
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* dark mode user-agent-styles */
+
+/* html {
+  color-scheme: dark light;
+} */
+
+/* min body height */
+
 body {
-  background-color: bisque;
-  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* responsive images/videos */
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+/***************************************/
+/*             Variables               */
+/***************************************/
+
+:root {
+  /* Font Families*/
+  --ff-main: Raleway, sans-serif;
+  --ff-heading: "Josefin Sans", sans-serif;
+
+  /* Font Weights*/
+  --fw-bold: 600;
+  --fw-bolder: 700;
+
+  /* Font Sizes*/
+  --fs-xs: 0.75rem;
+  --fs-s: 0.825rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.25rem;
+  --fs-xl: 1.5rem;
+
+  /* Line Heights*/
+  --lh-normal: 1.5;
+  --lh-tight: 1;
+
+  /* Spacing */
+  --spacing-base: 0.25rem;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 2.5rem;
+
+  --clr-text-50: light-dark(#eef7f7, #081111);
+  --clr-text-100: light-dark(#dcefef, #102323);
+  --clr-text-200: light-dark(#badede, #214545);
+  --clr-text-300: light-dark(#97cece, #316868);
+  --clr-text-400: light-dark(#74bebe, #418b8b);
+  --clr-text-500: light-dark(#52adad, #52adad);
+  --clr-text-600: light-dark(#418b8b, #74bebe);
+  --clr-text-700: light-dark(#316868, #97cece);
+  --clr-text-800: light-dark(#214545, #badede);
+  --clr-text-900: light-dark(#102323, #dcefef);
+  --clr-text-950: light-dark(#081111, #eef7f7);
+
+  /* Wrapping assigned values in the light-dark function */
+  --clr-background-50: light-dark(#edf7f5, #08120f);
+  --clr-background-100: light-dark(#dbf0eb, #0f241f);
+  --clr-background-200: light-dark(#b8e0d6, #1f473d);
+  --clr-background-300: light-dark(#94d1c2, #2e6b5c);
+  --clr-background-400: light-dark(#70c2ad, #3d8f7a);
+  --clr-background-500: light-dark(#4db399, #4db399);
+  --clr-background-600: light-dark(#3d8f7a, #70c2ad);
+  --clr-background-700: light-dark(#2e6b5c, #94d1c2);
+  --clr-background-800: light-dark(#1f473d, #b8e0d6);
+  --clr-background-900: light-dark(#0f241f, #dbf0eb);
+  --clr-background-950: light-dark(#08120f, #edf7f5);
+
+  /* Wrapping assigned values in the light-dark function */
+  --clr-primary-50: light-dark(#eef7f6, #081111);
+  --clr-primary-100: light-dark(#dcefee, #102322);
+  --clr-primary-200: light-dark(#badedd, #214544);
+  --clr-primary-300: light-dark(#97cecb, #316865);
+  --clr-primary-400: light-dark(#74beba, #418b87);
+  --clr-primary-500: light-dark(#52ada9, #52ada9);
+  --clr-primary-600: light-dark(#418b87, #74beba);
+  --clr-primary-700: light-dark(#316865, #97cecb);
+  --clr-primary-800: light-dark(#214544, #badedd);
+  --clr-primary-900: light-dark(#102322, #dcefee);
+  --clr-primary-950: light-dark(#081111, #eef7f6);
+
+  /* Wrapping assigned values in the light-dark function */
+  --clr-secondary-50: light-dark(#eeeef7, #080911);
+  --clr-secondary-100: light-dark(#dcddef, #101123);
+  --clr-secondary-200: light-dark(#babbde, #212245);
+  --clr-secondary-300: light-dark(#979ace, #313468);
+  --clr-secondary-400: light-dark(#7478be, #41458b);
+  --clr-secondary-500: light-dark(#5256ad, #5256ad);
+  --clr-secondary-600: light-dark(#41458b, #7478be);
+  --clr-secondary-700: light-dark(#313468, #979ace);
+  --clr-secondary-800: light-dark(#212245, #babbde);
+  --clr-secondary-900: light-dark(#101123, #dcddef);
+  --clr-secondary-950: light-dark(#080911, #eeeef7);
+
+  /* Wrapping assigned values in the light-dark function */
+  --clr-accent-50: light-dark(#f0eef7, #0a0811);
+  --clr-accent-100: light-dark(#e1dcef, #151023);
+  --clr-accent-200: light-dark(#c3bade, #2a2145);
+  --clr-accent-300: light-dark(#a597ce, #3f3168);
+  --clr-accent-400: light-dark(#8774be, #54418b);
+  --clr-accent-500: light-dark(#6952ad, #6952ad);
+  --clr-accent-600: light-dark(#54418b, #8774be);
+  --clr-accent-700: light-dark(#3f3168, #a597ce);
+  --clr-accent-800: light-dark(#2a2145, #c3bade);
+  --clr-accent-900: light-dark(#151023, #e1dcef);
+  --clr-accent-950: light-dark(#0a0811, #f0eef7);
+}
+/***************************************/
+/*           Global Styles             */
+/***************************************/
+
+body {
+  font-family: var(--ff-main);
+  font-optical-sizing: auto;
+  background-color: var(--clr-background-100);
+
+  line-height: var(--lh-normal);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--ff-headings);
+  /* less line-height on headings to keep them more compact */
+  /* usually 1.1 or maybe 1 depending on font choice */
+  line-height: var(--lh-tight);
+  font-weight: var(--fw-bold);
+}
+
+strong {
+  font-weight: var(--fw-bold);
+}
+
+/* same with styles, since not all fonts have italic for example */
+i {
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+}
+
+/***************************************/
+/*               Blocks                */
+/***************************************/
+
+.top-banner {
+  padding-top: var(--spacing-xl);
+  background-color: var(--clr-background-800);
+}
+
+.top-banner__header {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+}
+
+.top-banner__heading {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bolder);
+  
+  text-align: center;
+
+  padding: var(--spacing-md);
+
+  color: var(--clr-text-100);
+}
+
+.top-banner__subtitle {
+  color: var(--clr-text-100);
+  font-weight: var(--fw-bold);
+}
+
+.top-banner__strip {
+  display: block;
+
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-xs) 0;
+
+  background-color: var(--clr-background-700);
+}
+
+.top-banner__directories {
+  display: flex;
+  justify-self: center;
+
+  list-style: none;
+  gap: var(--spacing-sm);
+}
+
+.top-banner__link {
+  color: var(--clr-text-200);
+  font-weight: var(--fw-bold);
 }
