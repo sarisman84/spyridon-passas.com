@@ -186,7 +186,7 @@ a {
   text-decoration: none;
 
   background-color: var(--clr-primary-200);
-  color: var(--clr-text-600);
+  color: var(--clr-text-800);
 
   padding: var(--spacing-xs);
   border-radius: var(--border-radius-sm);
@@ -194,7 +194,7 @@ a {
 
 a:hover {
   background-color: var(--clr-accent-200);
-  color: var(--clr-accent-600);
+  color: var(--clr-accent-800);
 }
 
 a:focus {
@@ -254,8 +254,18 @@ a:focus {
   text-align: center;
 
   padding: var(--spacing-md);
+}
 
+.top-banner__heading > a {
   color: var(--clr-text-100);
+}
+
+.top-banner__heading > a:hover {
+  color: var(--clr-text-300);
+}
+
+.top-banner__heading > a:focus {
+  color: var(--clr-accent-300);
 }
 
 .top-banner__subtitle {
@@ -398,21 +408,9 @@ a:focus {
 .card__button {
   font-weight: var(--fw-bold);
 
-  background-color: var(--clr-primary-200);
-  color: var(--clr-text-600);
-
   border-radius: var(--border-radius-sm);
 
   margin: var(--spacing-xs) 0;
   padding: var(--spacing-xs);
 }
 
-.card__button:hover {
-  background-color: var(--clr-accent-200);
-  color: var(--clr-accent-700);
-}
-
-.card__button:focus {
-  background-color: var(--clr-accent-700);
-  color: var(--clr-text-50);
-}
