@@ -20,9 +20,9 @@
 
 /* dark mode user-agent-styles */
 
-/* html {
+/*html {
   color-scheme: dark light;
-} */
+}*/
 
 /* min body height */
 
@@ -156,7 +156,7 @@ video {
 body {
   font-family: var(--ff-main);
   font-optical-sizing: auto;
-  background-color: var(--clr-background-100);
+  background-color: var(--clr-background-200);
 
   line-height: var(--lh-normal);
 }
@@ -202,22 +202,32 @@ a:focus {
   color: var(--clr-text-50);
 }
 
-address > a {
-  background-color: transparent;
-}
-
-address > a:hover {
-  background-color: transparent;
-}
-
-address > a:focus {
-  background-color: transparent;
-  color: var(--clr-accent-400)
-}
-
 /***************************************/
-/*               Blocks                */
+/*               Utility               */
 /***************************************/
+
+.u-flex--vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+.u-btn-link {
+  background-color: transparent;
+  color: var(--clr-text-800);
+}
+
+.u-btn-link:hover {
+  background-color: transparent;
+  text-decoration: underline;
+
+  color: var(--clr-accent-600);
+}
+
+.u-btn-link:focus {
+  background-color: transparent;
+  color: var(--clr-accent-400);
+  text-decoration: underline;
+}
 
 /***************************************/
 /*               Blocks                */
